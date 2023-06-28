@@ -44,9 +44,6 @@ final class CharactersViewModel: ObservableObject {
             CharacterViewItem(
                 id: $0.id,
                 name: $0.name,
-                species: $0.species,
-                gender: $0.gender,
-                status: $0.status,
                 imageUrl: URL(string: $0.image)
             )
         }

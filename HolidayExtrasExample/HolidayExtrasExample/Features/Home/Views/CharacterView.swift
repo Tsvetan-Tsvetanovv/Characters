@@ -10,9 +10,6 @@ import SwiftUI
 struct CharacterViewItem: Identifiable {
     let id: Int
     let name: String
-    let species: String
-    let gender: String
-    let status: String
     let imageUrl: URL?
 }
 
