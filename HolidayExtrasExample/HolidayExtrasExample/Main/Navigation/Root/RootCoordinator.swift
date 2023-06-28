@@ -28,7 +28,7 @@ final class RootCoordinator {
         let viewModel = LaunchViewModel(rootCoordinating: self)
         let screen = LaunchScreen(viewModel: viewModel)
         let hostingController = UIHostingController(rootView: screen)
-        navigationController.setViewControllers([hostingController], animated: true)
+        navigationController.setViewControllers([hostingController], animated: false)
     }
 }
 

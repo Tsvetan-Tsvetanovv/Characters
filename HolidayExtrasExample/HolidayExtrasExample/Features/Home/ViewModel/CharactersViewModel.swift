@@ -9,7 +9,8 @@ import Foundation
 
 final class CharactersViewModel: ObservableObject {
     
-    @Published private(set) var characters: [Character] = []
+    @Published private(set) var characterItems: [CharacterViewItem] = []
+    private var characters: [Character] = []
 
     private let repository: CharacterRepository
     private weak var homeCoordinating: HomeCoordinating?
@@ -22,7 +23,8 @@ final class CharactersViewModel: ObservableObject {
         self.repository = repository
     }
 
-    func select(_ character: Character) {
+    func selectCharacter(_ character: CharacterViewItem) {
+        guard let character = characters.first(where: { $0.id == character.id }) else { return }
         homeCoordinating?.showCharacter(character)
     }
 
@@ -33,6 +35,20 @@ final class CharactersViewModel: ObservableObject {
 
         await MainActor.run { [weak self] in
             self?.characters = characters
+            self?.characterItems = self?.characterViewItems(from: characters) ?? []
+        }
+    }
+
+    func characterViewItems(from characters: [Character]) -> [CharacterViewItem] {
+        characters.map {
+            CharacterViewItem(
+                id: $0.id,
+                name: $0.name,
+                species: $0.species,
+                gender: $0.gender,
+                status: $0.status,
+                imageUrl: URL(string: $0.image)
+            )
         }
     }
 }

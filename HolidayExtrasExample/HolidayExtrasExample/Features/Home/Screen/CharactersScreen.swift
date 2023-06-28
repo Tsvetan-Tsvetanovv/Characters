@@ -18,11 +18,11 @@ struct CharactersScreen: View {
     var body: some View {
         VStack {
             ScrollView {
-                ForEach(viewModel.characters, id: \.id) { character in
-                    CharacterView(item: character)
+                ForEach(viewModel.characterItems) { item in
+                    CharacterView(item: item)
                         .padding(.vertical)
                         .onTapGesture {
-                            viewModel.select(character)
+                            viewModel.selectCharacter(item)
                         }
                 }
             }

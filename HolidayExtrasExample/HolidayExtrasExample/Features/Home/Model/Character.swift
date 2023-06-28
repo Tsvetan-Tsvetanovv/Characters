@@ -11,7 +11,7 @@ struct CharacterResponse: Codable {
     let results: [Character]
 }
 
-struct Character: Codable, Identifiable {
+struct Character: Codable {
     let id: Int
     let name: String
     let status: String

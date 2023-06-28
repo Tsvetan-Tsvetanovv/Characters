@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct CharacterViewItem {
+struct CharacterViewItem: Identifiable {
+    let id: Int
     let name: String
     let species: String
     let gender: String
@@ -17,15 +18,15 @@ struct CharacterViewItem {
 
 struct CharacterView: View {
 
-    private let item: Character
+    private let item: CharacterViewItem
 
-    init(item: Character) {
+    init(item: CharacterViewItem) {
         self.item = item
     }
 
     var body: some View {
         VStack {
-            AvatarView(url: URL(string: item.image))
+            AvatarView(url: item.imageUrl)
 
             Text(item.name)
                 .font(.title)
