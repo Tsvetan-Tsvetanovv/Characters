@@ -23,7 +23,6 @@ final class SignInViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
 
-    private var signInTask: Task<Void, Never>?
     private var cancellables = Set<AnyCancellable>()
 
     private var isValid: Bool {

@@ -27,7 +27,6 @@ final class SignUpViewModel: ObservableObject {
 
     private weak var signUpCoordinating: SignUpCoordinating?
 
-    private var signUpTask: Task<Void, Never>?
     private var cancellables = Set<AnyCancellable>()
 
     private var isValid: Bool {
