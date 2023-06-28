@@ -12,12 +12,12 @@ final class CharactersViewModel: ObservableObject {
     @Published private(set) var characterItems: [CharacterViewItem] = []
     private var characters: [Character] = []
 
-    private let repository: CharacterRepository
+    private let repository: CharacterRepositoryProtocol
     private weak var homeCoordinating: HomeCoordinating?
 
     init(
         homeCoordinating: HomeCoordinating,
-        repository: CharacterRepository
+        repository: CharacterRepositoryProtocol
     ) {
         self.homeCoordinating = homeCoordinating
         self.repository = repository
