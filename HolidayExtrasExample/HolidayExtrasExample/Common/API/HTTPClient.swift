@@ -8,16 +8,17 @@
 import Foundation
 
 protocol HTTPClientProtocol {
-    func data(for reques: URLRequest) async throws -> Data
+    func data<T: Decodable>(for reques: URLRequest) async throws -> T
 }
 
 enum HTTPClientError: Error {
     case invalidResponse
+    case mappingError
 }
 
 struct URLSessionHTTPClient: HTTPClientProtocol {
 
-    func data(for reques: URLRequest) async throws -> Data {
+    func data<T: Decodable>(for reques: URLRequest) async throws -> T {
         let (data, response) = try await URLSession.shared.data(for: reques)
 
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -28,6 +29,10 @@ struct URLSessionHTTPClient: HTTPClientProtocol {
             throw HTTPClientError.invalidResponse
         }
 
-        return data
+        guard let decodable = try? JSONDecoder().decode(T.self, from: data) else {
+            throw HTTPClientError.mappingError
+        }
+
+        return decodable
     }
 }

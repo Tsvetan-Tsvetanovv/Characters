@@ -28,6 +28,7 @@
 		F5B647DD2A4C5E3100962011 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B647DC2A4C5E3100962011 /* CharacterView.swift */; };
 		F5B647E12A4C624F00962011 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B647E02A4C624F00962011 /* AvatarView.swift */; };
 		F5B647E32A4C64BF00962011 /* CharacterDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B647E22A4C64BF00962011 /* CharacterDetailsScreen.swift */; };
+		F5B67F182A4C7C120011B62E /* RickAndMortyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B67F172A4C7C120011B62E /* RickAndMortyAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		F5B647DC2A4C5E3100962011 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		F5B647E02A4C624F00962011 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		F5B647E22A4C64BF00962011 /* CharacterDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsScreen.swift; sourceTree = "<group>"; };
+		F5B67F172A4C7C120011B62E /* RickAndMortyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				F5B647D52A4C58C300962011 /* HTTPClient.swift */,
+				F5B67F172A4C7C120011B62E /* RickAndMortyAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5B647A92A4C35C800962011 /* SignUpScreen.swift in Sources */,
+				F5B67F182A4C7C120011B62E /* RickAndMortyAPI.swift in Sources */,
 				F5B647C82A4C422300962011 /* CharactersScreen.swift in Sources */,
 				F5B647CD2A4C45DA00962011 /* SignInViewModel.swift in Sources */,
 				F5B647D92A4C5B6B00962011 /* CharactersViewModel.swift in Sources */,

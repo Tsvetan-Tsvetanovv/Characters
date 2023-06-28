@@ -28,7 +28,8 @@ final class MainCoordinator {
 
     func start() {
         let client = URLSessionHTTPClient()
-        let repository = CharacterRepository(client: client)
+        let api = RickAndMortyAPI(client: client)
+        let repository = CharacterRepository(rickAndMortyAPI: api)
         let viewModel = CharactersViewModel(homeCoordinating: self, repository: repository)
         let homeScreen = CharactersScreen(viewModel: viewModel)
         let hostingController = UIHostingController(rootView: homeScreen)
